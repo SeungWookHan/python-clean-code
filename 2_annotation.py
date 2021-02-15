@@ -3,12 +3,16 @@
 코드 사용자에세 함수 인자로 어떤 값이 와야하는지 등에 대한 힌트를 주는 것.
 이는 추후 공부할 타입 힌팅(type hinting)을 활성화 함.
 """
+
+
 class Point:
     lat: float
     long: float
+
     def __init__(self, lat, long):
         self.lat = lat
         self.long = long
+
 
 def locate(latitude: float, longitutd: float) -> Point:
     """맵에서 좌표에 해당하는 객체를 검색"""
@@ -39,6 +43,7 @@ docstring을 annotation이 대체하는 것으로 생각할 수 있는데,
 docstring의 일부를 이동시킬 수 있겠지만 이는 보다 나은 문서화를 위해 남겨야 한다.
 """
 
+
 def data_from_response(response: dict) -> dict:
     """response에 문제가 없다면 response의 payload를 반환
     - response의 사전의 예제::
@@ -56,5 +61,6 @@ def data_from_response(response: dict) -> dict:
     if response["status"] != 200:
         raise ValueError
     return {"data": response["payload"]}
+
 
 # 이러한 문서는 입출력 값을 더 잘 이해하기 위해서 뿐 아닌 단위 테스트에서도 유용하게 사용됨.
