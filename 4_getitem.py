@@ -19,6 +19,11 @@ class Items:
     
     def __getitem__(self, item):
         return self._values.__getitem__(item)
+
+items = Items(1, 2, 3)
+print(items.__len__()) # 3
+print(items.__getitem__(1)) # 2
+
 """
 위 예제는 캡슐화 방식을 사용함
 다른 방법으로 collections.UserList 부모 클래스를 상속하여 사용할 수도 있다.
